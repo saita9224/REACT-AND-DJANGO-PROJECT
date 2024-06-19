@@ -5,7 +5,9 @@ import { getstoc, deletestoc } from '../../actions/stoc';
 
 export class Stoc extends Component {
   static PropTypes = {
-    stoc: PropTypes.array.isRequired
+    stoc: PropTypes.array.isRequired,
+    getstoc: PropTypes.func.isRequired,
+    deletestoc: PropTypes.func.isRequired
   };
 
   componentDidMount(){
@@ -38,7 +40,8 @@ export class Stoc extends Component {
               <td>{stoc.amount}</td>
               <td>{stoc.price}</td>
               <td>
-                <button onClick={this.props.deletestoc.bind(this, stoc.id
+                <button onClick={this.props.deletestoc.bind(this, 
+                stoc.id
                 )} 
                 className='btn btn-danger btn-sm'>
                   Use
